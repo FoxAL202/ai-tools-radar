@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { TrendingUp, Flame } from 'lucide-react';
 import { AITool } from '@/lib/types';
+import { useI18n } from '@/contexts/I18nContext';
 
 interface TrendingToolsProps {
   tools: AITool[];
@@ -10,6 +11,8 @@ interface TrendingToolsProps {
 }
 
 export default function TrendingTools({ tools, isDark }: TrendingToolsProps) {
+  const { t } = useI18n();
+
   const topTrending = [...tools]
     .sort((a, b) => b.trend - a.trend)
     .slice(0, 5);
@@ -21,7 +24,7 @@ export default function TrendingTools({ tools, isDark }: TrendingToolsProps) {
           <Flame size={20} className="text-emerald-400" />
         </div>
         <h2 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-          Trending This Week
+          {t('trendingWeek')}
         </h2>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -50,7 +53,7 @@ export default function TrendingTools({ tools, isDark }: TrendingToolsProps) {
               {tool.name}
             </h3>
             <p className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
-              {tool.category}
+              {t(tool.category)}
             </p>
           </motion.div>
         ))}

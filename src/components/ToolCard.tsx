@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, ExternalLink, TrendingUp, Zap } from 'lucide-react';
+import { Star, ExternalLink, TrendingUp } from 'lucide-react';
 import { AITool } from '@/lib/types';
+import { useI18n } from '@/contexts/I18nContext';
 
 interface ToolCardProps {
   tool: AITool;
@@ -11,6 +12,8 @@ interface ToolCardProps {
 }
 
 export default function ToolCard({ tool, index, isDark }: ToolCardProps) {
+  const { t } = useI18n();
+
   const categoryStyles: Record<string, { bg: string; text: string; border: string }> = {
     text: { bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20' },
     image: { bg: 'bg-purple-500/10', text: 'text-purple-400', border: 'border-purple-500/20' },
@@ -79,7 +82,7 @@ export default function ToolCard({ tool, index, isDark }: ToolCardProps) {
               </div>
               <span className={`text-xs ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>·</span>
               <span className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
-                {tool.votes.toLocaleString()} votes
+                {tool.votes.toLocaleString()} {t('votes')}
               </span>
             </div>
           </div>
@@ -95,7 +98,7 @@ export default function ToolCard({ tool, index, isDark }: ToolCardProps) {
         {/* Footer */}
         <div className="flex items-center justify-between">
           <span className={`text-xs px-3 py-1.5 rounded-full border font-medium ${cat.bg} ${cat.text} ${cat.border}`}>
-            {tool.category.charAt(0).toUpperCase() + tool.category.slice(1)}
+            {t(tool.category)}
           </span>
           <a
             href={tool.url}
@@ -107,7 +110,7 @@ export default function ToolCard({ tool, index, isDark }: ToolCardProps) {
                 : 'text-gray-400 hover:text-violet-600'
             }`}
           >
-            Visit
+            {t('visit')}
             <ExternalLink size={13} className="transition-transform group-hover:translate-x-0.5" />
           </a>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { Search } from 'lucide-react';
+import { useI18n } from '@/contexts/I18nContext';
 
 interface SearchBarProps {
   value: string;
@@ -9,6 +10,8 @@ interface SearchBarProps {
 }
 
 export default function SearchBar({ value, onChange, isDark }: SearchBarProps) {
+  const { t } = useI18n();
+
   return (
     <div className="relative max-w-lg mx-auto w-full">
       <Search
@@ -21,7 +24,7 @@ export default function SearchBar({ value, onChange, isDark }: SearchBarProps) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Search AI tools..."
+        placeholder={t('searchPlaceholder')}
         className={`w-full pl-12 pr-5 py-4 rounded-2xl text-sm transition-all focus:outline-none focus:ring-2 ${
           isDark
             ? 'bg-gray-900/60 border border-gray-800 text-white placeholder-gray-500 focus:ring-violet-500/50 focus:border-violet-500/50'

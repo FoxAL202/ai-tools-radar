@@ -5,12 +5,14 @@ import { motion } from 'framer-motion';
 import { Sun, Moon, Sparkles } from 'lucide-react';
 import { Category } from '@/lib/types';
 import { TOOLS_DATA, searchTools } from '@/lib/data';
+import { useI18n } from '@/contexts/I18nContext';
 import ToolCard from '@/components/ToolCard';
 import CategoryFilter from '@/components/CategoryFilter';
 import SearchBar from '@/components/SearchBar';
 import TrendingTools from '@/components/TrendingTools';
 
 export default function HomePage() {
+  const { locale, setLocale, t } = useI18n();
   const [isDark, setIsDark] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -39,13 +41,46 @@ export default function HomePage() {
               <Sparkles size={22} className="text-white" />
             </div>
             <div>
-              <h1 className="text-lg font-bold tracking-tight">AI Tools Radar</h1>
+              <h1 className="text-lg font-bold tracking-tight">{t('siteTitle')}</h1>
               <p className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-400'}`}>
-                Top 50 AI tools ranked
+                {t('top50Ranked')}
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            {/* Language Switcher */}
+            <div className={`flex items-center rounded-xl p-1 ${
+              isDark ? 'bg-gray-800' : 'bg-gray-100'
+            }`}>
+              <button
+                onClick={() => setLocale('en')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  locale === 'en'
+                    ? isDark
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'bg-gray-900 text-white shadow-sm'
+                    : isDark
+                      ? 'text-gray-400 hover:text-gray-200'
+                      : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {t('langEn')}
+              </button>
+              <button
+                onClick={() => setLocale('ru')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                  locale === 'ru'
+                    ? isDark
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'bg-gray-900 text-white shadow-sm'
+                    : isDark
+                      ? 'text-gray-400 hover:text-gray-200'
+                      : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                {t('langRu')}
+              </button>
+            </div>
             <a
               href="https://github.com/FoxAL202/ai-tools-radar"
               target="_blank"
@@ -82,19 +117,19 @@ export default function HomePage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm font-medium mb-6">
               <Sparkles size={14} />
-              Updated weekly
+              {t('updatedWeekly')}
             </div>
             <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 tracking-tight ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Discover the Best
+              {t('heroTitle1')}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-400 to-blue-400">
-                AI Tools
+                {t('heroTitle2')}
               </span>
             </h2>
             <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-              Top 50 AI tools ranked by community votes. Filter by category, search, and discover what&apos;s trending this week.
+              {t('heroSubtitle')}
             </p>
           </motion.div>
         </section>
@@ -117,9 +152,9 @@ export default function HomePage() {
         </section>
 
         {/* Results count */}
-        <div className={`mb-6 flex items-center justify-between`}>
+        <div className="mb-6 flex items-center justify-between">
           <p className={`text-sm ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
-            Showing <span className={`font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{filteredTools.length}</span> of 50 tools
+            {t('showingCount')} <span className={`font-semibold ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{filteredTools.length}</span> {t('ofTools')}
           </p>
         </div>
 
@@ -132,8 +167,8 @@ export default function HomePage() {
 
         {filteredTools.length === 0 && (
           <div className={`text-center py-20 ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>
-            <p className="text-lg font-medium mb-2">No tools found</p>
-            <p className="text-sm">Try adjusting your search or filter criteria.</p>
+            <p className="text-lg font-medium mb-2">{t('noToolsFound')}</p>
+            <p className="text-sm">{t('tryAdjusting')}</p>
           </div>
         )}
       </main>
@@ -147,11 +182,11 @@ export default function HomePage() {
             <div className="flex items-center gap-2">
               <Sparkles size={18} className="text-violet-400" />
               <span className={`text-sm font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                AI Tools Radar
+                {t('siteTitle')}
               </span>
             </div>
             <p className={`text-xs ${isDark ? 'text-gray-600' : 'text-gray-400'}`}>
-              Data sourced from Product Hunt & community · Built with Next.js
+              {t('sourcedFrom')}
             </p>
           </div>
         </div>

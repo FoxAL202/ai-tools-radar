@@ -1,6 +1,7 @@
 'use client';
 
 import { Category, CATEGORIES } from '@/lib/types';
+import { useI18n } from '@/contexts/I18nContext';
 
 interface CategoryFilterProps {
   selectedCategory: Category | 'all';
@@ -13,6 +14,18 @@ export default function CategoryFilter({
   onCategoryChange,
   isDark,
 }: CategoryFilterProps) {
+  const { t } = useI18n();
+
+  const categoryLabels: Record<Category | 'all', () => string> = {
+    all: () => t('allTools'),
+    text: () => t('textWriting'),
+    image: () => t('imageDesign'),
+    code: () => t('codeDev'),
+    audio: () => t('audioMusic'),
+    video: () => t('video'),
+    other: () => t('other'),
+  };
+
   return (
     <div className="flex flex-wrap gap-2 justify-center">
       <button
@@ -27,7 +40,7 @@ export default function CategoryFilter({
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-transparent'
         }`}
       >
-        All Tools
+        {categoryLabels['all']()}
       </button>
       {CATEGORIES.map((cat) => (
         <button
@@ -43,7 +56,7 @@ export default function CategoryFilter({
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-transparent'
           }`}
         >
-          {cat.label}
+          {categoryLabels[cat.value]()}
         </button>
       ))}
     </div>
