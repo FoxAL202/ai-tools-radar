@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Star, ExternalLink, TrendingUp } from 'lucide-react';
-import { AITool } from '../lib/types';
+import { AITool } from '@/lib/types';
 
 interface ToolCardProps {
   tool: AITool;

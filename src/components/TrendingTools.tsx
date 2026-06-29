@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
-import { AITool } from '../lib/types';
+import { AITool } from '@/lib/types';
 
 interface TrendingToolsProps {
   tools: AITool[];

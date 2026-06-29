@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Moon, Sparkles } from 'lucide-react';
-import { Category } from '../lib/types';
-import { TOOLS_DATA, searchTools } from '../lib/data';
-import ToolCard from '../components/ToolCard';
-import CategoryFilter from '../components/CategoryFilter';
-import SearchBar from '../components/SearchBar';
-import TrendingTools from '../components/TrendingTools';
+import { Category } from '@/lib/types';
+import { TOOLS_DATA, searchTools } from '@/lib/data';
+import ToolCard from '@/components/ToolCard';
+import CategoryFilter from '@/components/CategoryFilter';
+import SearchBar from '@/components/SearchBar';
+import TrendingTools from '@/components/TrendingTools';
 
 export default function HomePage() {
   const [isDark, setIsDark] = useState(true);

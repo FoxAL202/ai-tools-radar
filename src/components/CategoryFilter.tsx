@@ -1,6 +1,6 @@
 'use client';
 
-import { Category, CATEGORIES } from '../lib/types';
+import { Category, CATEGORIES } from '@/lib/types';
 
 interface CategoryFilterProps {
   selectedCategory: Category | 'all';
