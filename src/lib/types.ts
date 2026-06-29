@@ -1,3 +1,5 @@
+export type Category = 'text' | 'image' | 'code' | 'audio' | 'video' | 'other';
+
 export interface AITool {
   id: string;
   name: string;
@@ -6,15 +8,13 @@ export interface AITool {
   rating: number;
   votes: number;
   votesPrevWeek: number;
-  trend: number; // percentage change
+  trend: number;
   url: string;
   imageUrl: string;
   tags: string[];
   createdAt: string;
   source: 'producthunt' | 'manual';
 }
-
-export type Category = 'text' | 'image' | 'code' | 'audio' | 'video' | 'other';
 
 export const CATEGORIES: { value: Category; label: string; color: string }[] = [
   { value: 'text', label: 'Text & Writing', color: 'bg-blue-500' },

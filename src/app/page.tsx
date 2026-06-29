@@ -10,6 +10,7 @@ import ToolCard from '@/components/ToolCard';
 import CategoryFilter from '@/components/CategoryFilter';
 import SearchBar from '@/components/SearchBar';
 import TrendingTools from '@/components/TrendingTools';
+import { useLocalizedTools } from '@/hooks/useLocalizedTools';
 
 export default function HomePage() {
   const { locale, setLocale, t } = useI18n();
@@ -17,14 +18,27 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<Category | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  let filteredTools = TOOLS_DATA;
+  // Get localized tools based on current locale
+  const localizedTools = useLocalizedTools(TOOLS_DATA, locale);
+
+  let filteredTools = localizedTools;
 
   if (selectedCategory !== 'all') {
     filteredTools = filteredTools.filter(t => t.category === selectedCategory);
   }
 
   if (searchQuery) {
-    filteredTools = searchTools(searchQuery);
+    // Search in both English and translated content
+    const query = searchQuery.toLowerCase();
+    filteredTools = localizedTools.filter(
+      tool =>
+        tool.name.toLowerCase().includes(query) ||
+        tool.description.toLowerCase().includes(query) ||
+        tool.tags.some(tag => tag.includes(query)) ||
+        // Also search in original English
+        TOOLS_DATA.find(src => src.id === tool.id)?.name.toLowerCase().includes(query) ||
+        TOOLS_DATA.find(src => src.id === tool.id)?.description.toLowerCase().includes(query)
+    );
   }
 
   return (
@@ -135,7 +149,7 @@ export default function HomePage() {
         </section>
 
         {/* Trending */}
-        <TrendingTools tools={TOOLS_DATA} isDark={isDark} />
+        <TrendingTools tools={localizedTools} isDark={isDark} />
 
         {/* Search */}
         <section className="mb-8">

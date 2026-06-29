@@ -1,0 +1,194 @@
+{
+  "chatgpt": {
+    "name": "ChatGPT",
+    "description": "Разговорный AI для написания текстов, кода, анализа и мозгового штурма"
+  },
+  "claude": {
+    "name": "Claude",
+    "description": "AI-ассистент от Anthropic с фокусом на безопасность и длинные цепочки рассуждений"
+  },
+  "midjourney": {
+    "name": "Midjourney",
+    "description": "Генератор AI-изображений, создающий потрясающие визуалы из текстовых запросов"
+  },
+  "github-copilot": {
+    "name": "GitHub Copilot",
+    "description": "AI-партнёр для программирования, предлагающий код в реальном времени"
+  },
+  "gemini": {
+    "name": "Gemini",
+    "description": "AI Google с мультимодальными возможностями для текста, изображений и видео"
+  },
+  "stable-diffusion": {
+    "name": "Stable Diffusion",
+    "description": "Модель преобразования текста в изображение с открытым исходным кодом"
+  },
+  "anthropic-claude-code": {
+    "name": "Claude Code",
+    "description": "AI-агент для разработки сложного ПО, встроенный в терминал"
+  },
+  "cursor": {
+    "name": "Cursor",
+    "description": "Редактор кода с AI-first подходом, построенный на VS Code"
+  },
+  "dall-e": {
+    "name": "DALL·E 3",
+    "description": "Генератор изображений OpenAI, интегрированный с ChatGPT"
+  },
+  "perplexity": {
+    "name": "Perplexity AI",
+    "description": "AI-поисковик с веб-исследованиями и цитированием в реальном времени"
+  },
+  "elevenlabs": {
+    "name": "ElevenLabs",
+    "description": "Генерация и клонирование AI-голоса с эмоциональной передачей"
+  },
+  "runway": {
+    "name": "Runway",
+    "description": "Монтаж и генерация AI-видео для творческих профессионалов"
+  },
+  "sora": {
+    "name": "Sora",
+    "description": "Модель OpenAI для создания кинематографичного видео из текста"
+  },
+  "notion-ai": {
+    "name": "Notion AI",
+    "description": "AI-помощник по написанию текстов внутри рабочего пространства Notion"
+  },
+  "whisper": {
+    "name": "Whisper",
+    "description": "Распознавание речи OpenAI, поддерживающее 99 языков"
+  },
+  "fireflies": {
+    "name": "Fireflies.ai",
+    "description": "AI-ассистент для встреч с транскрипцией и списком задач"
+  },
+  "replit-agent": {
+    "name": "Replit Agent",
+    "description": "AI-агент, который создаёт приложения по описанию на естественном языке"
+  },
+  "synthesia": {
+    "name": "Synthesia",
+    "description": "Генерация видео с AI-аватарами для корпоративного обучения"
+  },
+  "aivoices": {
+    "name": "ElevenLabs Voice",
+    "description": "Ультрареалистичное клонирование голоса и синтез речи"
+  },
+  "writesonic": {
+    "name": "Writesonic",
+    "description": "Генерация AI-контента для маркетинга и SEO"
+  },
+  "jasper": {
+    "name": "Jasper",
+    "description": "AI-платформа для команд по созданию контента"
+  },
+  "codeium": {
+    "name": "Codeium",
+    "description": "Бесплатное автодополнение AI-кода для 70+ языков"
+  },
+  "pika": {
+    "name": "Pika Labs",
+    "description": "Генерация и монтаж AI-видео с переносом стиля"
+  },
+  "deepL": {
+    "name": "DeepL",
+    "description": "AI-переводчик с учётом контекста и тонкостей языка"
+  },
+  "otter": {
+    "name": "Otter.ai",
+    "description": "AI-заметки для встреч с транскрипцией в реальном времени"
+  },
+  "background": {
+    "name": "remove.bg",
+    "description": "AI-удаление фона с изображений за секунды"
+  },
+  "ideogram": {
+    "name": "Ideogram",
+    "description": "AI-генератор изображений с идеальным рендерингом текста"
+  },
+  "canva-ai": {
+    "name": "Canva AI",
+    "description": "Дизайн-платформа с AI для текста, изображений и макетов"
+  },
+  "hugging-chat": {
+    "name": "HuggingChat",
+    "description": "Открытый разговорный AI от Hugging Face"
+  },
+  "heygen": {
+    "name": "HeyGen",
+    "description": "Генерация видео с AI-аватарами для персонализированных сообщений"
+  },
+  "figma-ai": {
+    "name": "Figma AI",
+    "description": "AI-инструменты внутри коллаборативного дизайн-редактора Figma"
+  },
+  "roresearch": {
+    "name": "Consensus",
+    "description": "AI-исследовательский движок для научных статей и доказательной базы"
+  },
+  "grammarly": {
+    "name": "Grammarly",
+    "description": "AI-помощник для грамматики, стиля и ясности текста"
+  },
+  "hey-photo": {
+    "name": "HeyPhoto",
+    "description": "AI-редактирование фотографий с манипуляцией лицом"
+  },
+  "aistudio": {
+    "name": "AI Studio",
+    "description": "AI для документов, таблиц и презентаций от Google"
+  },
+  "voice-ai": {
+    "name": "Voice.ai",
+    "description": "Изменение голоса в реальном времени и AI-эффекты"
+  },
+  "humata": {
+    "name": "Humata",
+    "description": "AI для ответов по документам и суммаризации любых файлов"
+  },
+  "typeframes": {
+    "name": "Typeframes",
+    "description": "Создание анимированных AI-видео для продуктов и рекламы"
+  },
+  "tabnine": {
+    "name": "Tabnine",
+    "description": "AI-автодополнение кода, обученное на вашей базе"
+  },
+  "suno": {
+    "name": "Suno",
+    "description": "Генерация AI-музыки из текстового описания"
+  },
+  "elevenlabs-scribe": {
+    "name": "ElevenLabs Scribe",
+    "description": "AI-транскрипция речи с распознаванием спикеров"
+  },
+  "lovable": {
+    "name": "Lovable",
+    "description": "AI-конструктор веб-приложений с полным деплоем"
+  },
+  "bolt": {
+    "name": "Bolt.new",
+    "description": "Полноценная веб-разработка с AI прямо в браузере"
+  },
+  "descript": {
+    "name": "Descript",
+    "description": "AI-монтаж аудио и видео через редактирование текста"
+  },
+  "genmo": {
+    "name": "Genmo",
+    "description": "Генерация AI-видео с кинематографичным движением"
+  },
+  "adaptive": {
+    "name": "Adaptiv",
+    "description": "AI-генератор резюме, адаптированный под вакансию"
+  },
+  "adcreative": {
+    "name": "AdCreative.ai",
+    "description": "Генерация AI-креативов для маркетинга"
+  },
+  "beautiful": {
+    "name": "Beautiful.ai",
+    "description": "AI-дизайн презентаций с умными шаблонами"
+  }
+}
